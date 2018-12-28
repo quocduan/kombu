@@ -760,7 +760,7 @@ class Channel(virtual.Channel):
 
                 #fix bugs , learning from `test_redis.py`
                 if retry == 0:
-                    client.sadd(key, '{}}\x06\x16\x06\x16{}'.format(exchange))
+                    client.sadd(key, '{0}\x06\x16\x06\x16{0}'.format(exchange))
                     return self.get_table(exchange, retry = 1)
 
                 raise InconsistencyError(NO_ROUTE_ERROR.format(exchange, key))
